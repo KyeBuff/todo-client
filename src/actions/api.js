@@ -1,6 +1,6 @@
 import axios from '../axios.js';
 import { fromJS } from 'immutable';
-import { setAllTasks } from './state';
+import { setAllTasks, setCompleteTask, addTask, removeTask } from './state';
 
 const getAllTasks = () => dispatch => {
 
@@ -12,6 +12,35 @@ const getAllTasks = () => dispatch => {
 
 };
 
+const patchComplete = id => dispatch => {
+
+	axios.patch("/tasks/"+id+"/complete").then(response => {
+		const completeTask = fromJS(response.data);
+
+		dispatch(setCompleteTask(completeTask));
+	});
+
+};
+
+const deleteTask = id => dispatch => {
+	axios.delete("/tasks/"+id).then(response => {
+		dispatch(removeTask(id));
+	});
+
+};
+
+const postTask = task => dispatch => {
+
+	axios.post("/tasks", task).then(response => {
+		const task = fromJS(response.data);
+		dispatch(addTask(task));
+	});
+
+};
+
 export {
-	getAllTasks
+	getAllTasks,
+	patchComplete,
+	postTask,
+	deleteTask
 }

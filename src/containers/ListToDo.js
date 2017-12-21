@@ -1,10 +1,17 @@
 import ToDoList from '../components/lists/ToDoList';
 import { connect } from 'react-redux';
+import { getAllTasks } from '../actions/api';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
 	return {
-		listName: 'ToDo',
+		tasks: state.get('tasks').filter(task => !task.get('complete')),
 	}
 }
 
-export default connect(mapStateToProps)(ToDoList);
+const mapDispatchToProps = dispatch => {
+	return {
+		onLoad: () => dispatch(getAllTasks()),
+	}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ToDoList);

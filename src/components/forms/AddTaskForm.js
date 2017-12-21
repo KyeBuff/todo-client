@@ -30,19 +30,26 @@ class AddTaskForm extends Component {
 
   onSubmit(e) {
     e.preventDefault();
+
+    const task = {
+      task: this.state.taskName,
+      priority: this.state.priority || null,
+    }
+
+    this.props.onAddTask(task);
   }
 
   render() {
     return (
-      <form onSubmit={this.onSubmit}>
-        <input type="text" value={this.state.taskName} onChange={this.onNameChange}/>
-        <select onChange={this.onPriorityChange} value={this.state.priority}>
+      <form className="task-form" onSubmit={this.onSubmit}>
+        <input className="task-input" type="text" value={this.state.taskName} onChange={this.onNameChange}/>
+        <select className="task-select" onChange={this.onPriorityChange} value={this.state.priority}>
           <option value={0} disabled>Priority</option>
           <option value={1}>Low</option>
           <option value={2}>Med</option>
           <option value={3}>High</option>
         </select>
-        <input type="submit" value="+" />
+        <input className="task-submit" type="submit" value="+" />
       </form>
     )
   }

@@ -1,0 +1,65 @@
+a {
+	text-decoration: none;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+}
+
+.task {
+	box-sizing: border-box;
+	padding: 1em;
+
+	background-color: #C0C0C0;
+}
+
+.task button {
+	margin: 0 1em;
+}
+
+.task-complete {
+	background-color: lightgreen;
+}
+
+.App {
+	margin: 0 auto;
+	width: 50%;
+}
+
+/* Headers */
+
+h1 {
+	text-align: center;
+}
+
+/* Form */
+
+.task-form {
+	display: flex;
+	justify-content: space-around;
+}
+
+.task-input {
+	width: 60%;
+}
+
+.task-select {
+	width: ;
+}
+
+.task-submit {
+	display: block;
+	padding: .5em;
+}
+
+.list-tabs {
+	display: flex;
+	justify-content: space-around;
+
+	padding: 1em;
+}
+
+.list-tabs a {
+	color: black;
+}
