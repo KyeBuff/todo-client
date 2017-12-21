@@ -3117,6 +3117,10 @@ immutable-js@^0.3.1-6:
   version "0.3.1-6"
   resolved "https://registry.yarnpkg.com/immutable-js/-/immutable-js-0.3.1-6.tgz#42ac4805899a9afea86bd3cfdfe2478aec24d100"
 
+immutable@^3.8.2:
+  version "3.8.2"
+  resolved "https://registry.yarnpkg.com/immutable/-/immutable-3.8.2.tgz#c2439951455bb39913daf281376f1530e104adf3"
+
 import-local@^0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/import-local/-/import-local-0.1.1.tgz#b1179572aacdc11c6a91009fb430dbcab5f668a8"
