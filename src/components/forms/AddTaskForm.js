@@ -51,7 +51,7 @@ class AddTaskForm extends Component {
           <option value={2}>Med</option>
           <option value={3}>High</option>
         </select>
-        <input className="task-submit" type="submit" value="+" />
+        <input className="task-submit" type="submit" value="Add" />
       </form>
     )
   }
