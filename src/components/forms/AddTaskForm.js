@@ -40,13 +40,13 @@ class AddTaskForm extends Component {
       this.props.onAddTask(task);
     }
 
-    this.setState({taskName: "", priority: 0})
+    this.setState({taskName: "", priority: 0});
   }
 
   render() {
     return (
       <form className="task-form" onSubmit={this.onSubmit}>
-        <input className="task-input" type="text" value={this.state.taskName} onChange={this.onNameChange}/>
+        <input className="task-input" type="text" value={this.state.taskName} onChange={this.onNameChange} placeholder="Add a task..."/>
         <select className="task-select" onChange={this.onPriorityChange} value={this.state.priority}>
           <option value={0} disabled>Priority</option>
           <option value={1}>Low</option>
