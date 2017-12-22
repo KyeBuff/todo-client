@@ -39,6 +39,8 @@ class AddTaskForm extends Component {
     if(this.state.taskName) {
       this.props.onAddTask(task);
     }
+
+    this.setState({taskName: "", priority: 0})
   }
 
   render() {
