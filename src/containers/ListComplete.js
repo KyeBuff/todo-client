@@ -4,7 +4,7 @@ import { getAllTasks } from '../actions/api';
 
 const mapStateToProps = state => {
 	return {
-		tasks: state.get('tasks').filter(task => task.get('complete') ),
+		tasks: state.get('tasks').filter(task => task.get('complete')),
 	}
 }
 

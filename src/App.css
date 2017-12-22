@@ -33,7 +33,7 @@ h1 {
 	text-align: center;
 }
 
-/* Form */
+/* Forms */
 
 .task-form {
 	display: flex;
@@ -62,4 +62,8 @@ h1 {
 
 .list-tabs a {
 	color: black;
+}
+
+.edit-form {
+	display: inline-block;
 }

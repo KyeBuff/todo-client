@@ -6,6 +6,40 @@ class ListItem extends Component {
 		super(props);
 		this.onTick = this.onTick.bind(this);
 		this.deleteTask = this.deleteTask.bind(this);
+		this.toggleEdit = this.toggleEdit.bind(this);
+		this.onChange = this.onChange.bind(this);
+		this.editTask = this.editTask.bind(this);
+
+		this.state = {
+			isEditing: false,
+			editedName: ""
+		}
+	}
+
+	toggleEdit() {
+		this.setState({isEditing: !this.state.isEditing});
+	}
+
+	editTask(e) {
+		e.preventDefault();
+
+		const editedTask = {
+			...this.props.task.toJS(),
+			task: this.state.editedName,
+		}
+
+		this.setState({isEditing: !this.state.isEditing});
+
+		if(this.state.editedName) {
+			this.props.editTask(editedTask);
+		}
+	}
+
+	onChange(e) {
+		const editedName = e.target.value;
+
+		this.setState({editedName});
+
 	}
 
 	onTick() {
@@ -23,8 +57,18 @@ class ListItem extends Component {
 		return (
 	  	<li className={complete ? "task task-complete" : "task"}>
 	  		<Button onClick={this.onTick} isDisabled={complete} value="tick" />
-	  		{this.props.task.get('task')}
-	  		<Button value="edit" />
+	  		{ this.state.isEditing ? 
+	  				<form className="edit-form" onSubmit={this.editTask}>
+	  					<input type="text" value={this.state.editedName} onChange={this.onChange}/> 
+	  					<input type="submit" value="Done" />
+	  				</form>
+	  				:
+	  				this.props.task.get('task')
+	  		}
+	  		{ !this.state.isEditing ? 
+	  			<Button value="Edit" onClick={this.toggleEdit}/	> :
+	  			null
+	  		}
 	  		<Button value="delete" onClick={this.deleteTask} />
 	  	</li>
 		)

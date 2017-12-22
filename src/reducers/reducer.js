@@ -24,6 +24,10 @@ const removeTask = (state, id) => {
 	return state.update('tasks', tasks => tasks.filter(t => t.get('id') !== id));
 }
 
+const updateTask = (state, task) => {
+	return state.update('tasks', tasks => tasks.map(t => t.get('id') === task.get('id') ? task : t));
+}
+
 const reducer = (state=initialState, action) => {
 	switch(action.type) {
 		case '[Tasks] setAllTasks': 
@@ -34,6 +38,8 @@ const reducer = (state=initialState, action) => {
 			return addTask(state, action.payload);	
 		case '[Tasks] removeTask': 	
 			return removeTask(state, action.payload);	
+		case '[Tasks] updateTask': 		
+			return updateTask(state, action.payload);	
 		default: 
 			return state;
 	}

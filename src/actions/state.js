@@ -27,9 +27,18 @@ const removeTask = (id) => {
 	}
 };
 
+
+const updateTask = (task) => {
+	return {
+		type: '[Tasks] updateTask',
+		payload: task,
+	}
+};
+
 export {
 	setAllTasks,
 	setCompleteTask,
 	addTask,
-	removeTask
+	removeTask,
+	updateTask
 }
