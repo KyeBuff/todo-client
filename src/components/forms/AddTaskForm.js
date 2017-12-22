@@ -36,7 +36,9 @@ class AddTaskForm extends Component {
       priority: this.state.priority || null,
     }
 
-    this.props.onAddTask(task);
+    if(this.state.taskName) {
+      this.props.onAddTask(task);
+    }
   }
 
   render() {

@@ -1,3 +1,11 @@
+body {
+	background-color: #3A3A3A;
+}
+
+a, button, input, span {
+	font-family: "Poiret One";
+}
+
 a {
 	text-decoration: none;
 }
@@ -8,28 +16,52 @@ ul {
 }
 
 .task {
+	display: flex;
+	justify-content: space-between;
+
 	box-sizing: border-box;
+	margin: .5em 0;
 	padding: 1em;
 
-	background-color: #C0C0C0;
+	background-color: white;
+
+	font-size: 1.5em;
 }
 
 .task button {
 	margin: 0 1em;
+
+	background-color: white;
+	border: none;
+
+	font-size: 1em;
+}
+
+.task button::disabled {
+	background-color: red;
 }
 
 .task-complete {
-	background-color: lightgreen;
+	background-color: #1BA866;
+
+	color: white;
+
+	transition: all 1s ease-in-out;
 }
 
 .App {
-	margin: 0 auto;
+	background-color: white;
+
+	margin: 2em auto;
+	padding: 2em;
 	width: 50%;
 }
 
 /* Headers */
 
 h1 {
+	font-family: "Poiret One";
+	margin-top: 0;
 	text-align: center;
 }
 
@@ -38,32 +70,57 @@ h1 {
 .task-form {
 	display: flex;
 	justify-content: space-around;
+	align-items: stretch;
 }
 
 .task-input {
+	font-size: 1.5em;
+	padding: .5em;
 	width: 60%;
 }
 
 .task-select {
-	width: ;
+	border: none;
+
+	background-color: #22819E;
+
+	color: white;
+	font-family: "Poiret One";
+	font-size: 2em;
 }
 
 .task-submit {
 	display: block;
-	padding: .5em;
+	padding: 1em;
 }
 
 .list-tabs {
 	display: flex;
 	justify-content: space-around;
 
+	margin: 1em 0 -15px;
 	padding: 1em;
 }
 
 .list-tabs a {
 	color: black;
+	font-size: 1.25em;
+}
+
+.list-tabs .active {
+	text-decoration: underline;
 }
 
 .edit-form {
 	display: inline-block;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
 }

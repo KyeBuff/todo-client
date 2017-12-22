@@ -63,7 +63,7 @@ class ListItem extends Component {
 	  					<input type="submit" value="Done" />
 	  				</form>
 	  				:
-	  				this.props.task.get('task')
+						<span>{this.props.task.get('task')}</span>
 	  		}
 	  		{ !this.state.isEditing ? 
 	  			<Button value="Edit" onClick={this.toggleEdit}/	> :
