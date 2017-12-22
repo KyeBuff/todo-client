@@ -22,7 +22,7 @@ class AddTaskForm extends Component {
   }
 
   onPriorityChange(e) {
-    const priority = e.target.options.selectedIndex + 1;
+    const priority = e.target.options.selectedIndex;
 
     this.setState({priority});
 

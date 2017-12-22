@@ -56,7 +56,10 @@ class ListItem extends Component {
 		const complete = this.props.task.get('complete');
 		return (
 	  	<li className={complete ? "task task-complete" : "task"}>
-	  		<Button onClick={this.onTick} isDisabled={complete} className="complete-button" />
+	  		{ complete ? 
+	  			<span className="task-status">Complete</span> :
+	  			<Button onClick={this.onTick} isDisabled={complete} className="complete-button" />
+	  		}
 	  		{ this.state.isEditing ? 
 	  				<form className="edit-form" onSubmit={this.editTask}>
 	  					<input type="text" value={this.state.editedName} onChange={this.onChange}/> 
