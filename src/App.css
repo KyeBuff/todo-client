@@ -1,5 +1,6 @@
 body {
 	background-color: #3A3A3A;
+	margin: 0;
 }
 
 a, button, input, span {
@@ -19,6 +20,7 @@ ul {
 	display: flex;
 	justify-content: space-between;
 
+	border: 1px solid #C0C0C0;
 	box-sizing: border-box;
 	margin: .5em 0;
 	padding: 1em;
@@ -26,6 +28,10 @@ ul {
 	background-color: white;
 
 	font-size: 1.5em;
+}
+
+.task span {
+	min-width: 150px;
 }
 
 .task button {
@@ -52,7 +58,8 @@ ul {
 .App {
 	background-color: white;
 
-	margin: 2em auto;
+	height: 100vh;
+	margin: 0 auto;
 	padding: 2em;
 	width: 50%;
 }
@@ -112,15 +119,56 @@ h1 {
 }
 
 .edit-form {
-	display: inline-block;
+	display: inline;
+	min-width: 150px;
 }
 
-@keyframes fadeIn {
-	from {
-		opacity: 0;
-	}
+.edit-form input {
+	display: block;
 
-	to {
-		opacity: 1;
-	}
+	box-sizing: border-box;
+	padding: .25em;
+	width: 100%;
+
+	font-family: "Poiret One";
+	font-size: 1em;
 }
+
+/*buttons*/
+
+.task .complete-button {
+	background-color: transparent;
+	background-image:  url(./assets/img/tick.png);
+	background-size: cover;
+	height: 30px;
+	width: 30px;
+	background-position: 0;
+
+	padding: 0;
+}
+
+.task-complete .complete-button {
+	background-color: transparent;
+	background-image:  none;
+}
+
+.task .edit-button {
+	background-color: transparent;
+	background-image: url(https://cdn2.iconfinder.com/data/icons/facebook-svg-icons-1/64/editprofile-128.png);
+	background-size: cover;
+	height: 30px;
+	width: 30px;
+	padding: 0;
+}
+
+.task .delete-button {
+	background-color: transparent;
+	background-image: url(./assets/img/delete.png);
+	background-size: cover;
+	background-position: 0;
+	height: 30px;
+	width: 30px;
+
+	padding: 0;	
+}
+	
