@@ -33,6 +33,7 @@ class AddTaskForm extends Component {
 
     const task = {
       task: this.state.taskName,
+      //db col is nullable
       priority: this.state.priority || null,
     }
 
@@ -46,7 +47,13 @@ class AddTaskForm extends Component {
   render() {
     return (
       <form className="task-form" onSubmit={this.onSubmit}>
-        <input className="task-input" type="text" value={this.state.taskName} onChange={this.onNameChange} placeholder="Add a task..."/>
+        <input 
+          className="task-input" 
+          type="text" 
+          value={this.state.taskName} 
+          onChange={this.onNameChange} 
+          placeholder="Add a task..."
+        />
         <select className="task-select" onChange={this.onPriorityChange} value={this.state.priority}>
           <option value={0} disabled>Priority</option>
           <option value={1}>Low</option>

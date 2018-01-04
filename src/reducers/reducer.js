@@ -5,10 +5,12 @@ const initialState = Map({
 });
 
 const setAllTasks = (state, payload) => {
+	// on pade load set all tasks
 	return state.set('tasks', payload);
 }
 
 const updateCompleteTask = (state, task) => {
+	//Update task where id matches
 	return state.update('tasks', tasks => {
 		return tasks.map(t => {
 			return t.get('id') === task.get('id') ? task : t;
@@ -21,10 +23,12 @@ const addTask = (state, task) => {
 }
 
 const removeTask = (state, id) => {
+	//Filter using !== id
 	return state.update('tasks', tasks => tasks.filter(t => t.get('id') !== id));
 }
 
 const updateTask = (state, task) => {
+	//Replace whole task where id matches
 	return state.update('tasks', tasks => tasks.map(t => t.get('id') === task.get('id') ? task : t));
 }
 

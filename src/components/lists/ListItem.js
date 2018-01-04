@@ -12,7 +12,7 @@ class ListItem extends Component {
 
 		this.state = {
 			isEditing: false,
-			editedName: ""
+			editedName: this.props.task.get('task'),
 		}
 	}
 
@@ -23,6 +23,7 @@ class ListItem extends Component {
 	editTask(e) {
 		e.preventDefault();
 
+		//spread the existing immutable task and overwrite task prop
 		const editedTask = {
 			...this.props.task.toJS(),
 			task: this.state.editedName,
@@ -30,6 +31,7 @@ class ListItem extends Component {
 
 		this.setState({isEditing: !this.state.isEditing});
 
+		//has a name validation
 		if(this.state.editedName) {
 			this.props.editTask(editedTask);
 		}
@@ -39,7 +41,6 @@ class ListItem extends Component {
 		const editedName = e.target.value;
 
 		this.setState({editedName});
-
 	}
 
 	onTick() {

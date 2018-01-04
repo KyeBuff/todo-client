@@ -13,11 +13,12 @@ import reducer from './reducers/reducer';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
+// Allows the application of thunks pre-state action
 const store = createStore(reducer, composeEnhancers(applyMiddleware(thunk)));
 
 ReactDOM.render(
 	<Provider store={store}>	
-		<Router>
+		<Router basename={'/todo/'}>
 			<App />
 		</Router>
 	</Provider>,

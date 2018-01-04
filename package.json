@@ -1,6 +1,7 @@
 {
   "name": "client",
   "version": "0.1.0",
+  "homepage": "http://kyebuffery.co.uk/to-do/",
   "private": true,
   "dependencies": {
     "axios": "^0.17.1",
