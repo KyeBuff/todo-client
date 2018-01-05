@@ -69,7 +69,7 @@ class ListItem extends Component {
 						<span>{this.props.task.get('task')}</span>
 	  		}
 	  		{ !this.state.isEditing ? 
-	  			<Button className="edit-button" onClick={this.toggleEdit}/	> :
+	  			<Button className="edit-button" onClick={this.toggleEdit} /> :
 	  			null
 	  		}
 	  		<Button className="delete-button" onClick={this.deleteTask} />

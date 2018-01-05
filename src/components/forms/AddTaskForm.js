@@ -1,4 +1,28 @@
 import React, { Component } from 'react';
+import Select from './Select';
+
+const options = [
+  {
+    value: 0,
+    disabled: true,
+    text: "Priority",
+  },
+  {
+    value: 1,
+    disabled: false,
+    text: "Low",
+  },
+  {
+    value: 2,
+    disabled: false,
+    text: "Med",
+  },
+  {
+    value: 3,
+    disabled: false,
+    text: "High",
+  },
+];
 
 class AddTaskForm extends Component {
 
@@ -54,16 +78,18 @@ class AddTaskForm extends Component {
           onChange={this.onNameChange} 
           placeholder="Add a task..."
         />
-        <select className="task-select" onChange={this.onPriorityChange} value={this.state.priority}>
-          <option value={0} disabled>Priority</option>
-          <option value={1}>Low</option>
-          <option value={2}>Med</option>
-          <option value={3}>High</option>
-        </select>
+        <Select 
+          className="task-select" 
+          onChange={this.onPriorityChange} 
+          value={this.state.priority}
+          options={options}
+        />
         <input className="task-submit" type="submit" value="Add" />
       </form>
     )
   }
 }
+
+
 
 export default AddTaskForm;

@@ -10,11 +10,9 @@ class ToDoList extends Component {
 
 	render() {
 		return (
-			<div>
-	 			<ul className="task-list">
-	 				{this.props.tasks.map(task => <ListItem key={task.get('id')} task={task} />)}
-	 			</ul>
-	  	</div>
+ 			<ul className="task-list">
+ 				{this.props.tasks.map(task => <ListItem key={task.get('id')} task={task} />)}
+ 			</ul>
 		)
 	}
 }
